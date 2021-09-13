@@ -1,0 +1,50 @@
+-----------------------------------------------
+	docker 
+-----------------------------------------------
+
+docker pull httpd 
+docker run 
+docker run --name ws2 httpd 
+docker start ws2 
+docker stop ws2 
+docker ps 
+docker ps -a 
+docker logs ws2 
+docker logs -f ws2 
+docker run -p 
+docker exec ws2 /bin/local/apache2/htdocs 
+docker rm ws2 
+docker rmi httpd 
+
+
+
+-----------------------------------------------
+	prometheus
+-----------------------------------------------
+docker image를 이용해서 prometheus를 설치한다.
+https://hub.docker.com/r/prom/prometheus
+
+docker run -p 9090:9090  -v F:/pyg/pyg/test/prometheus.yml:/etc/prometheus/prometheus.yml --name promehteus -d prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+
+prometheus.yml
+global:
+ scrape_interval:     5s
+scrape_configs:
+  - job_name: 'prometheus'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.0.143:80']
+	  
+	  
+-----------------------------------------------
+	grafana
+-----------------------------------------------	  
+docker image를 이용해서 grafana를 설치한다.
+https://hub.docker.com/r/grafana/grafana
+
+docker image search 
+
+docker run -d --name=grafana -p 3000:3000 grafana/grafana
+
+
+
