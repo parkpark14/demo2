@@ -47,4 +47,113 @@ docker image search
 docker run -d --name=grafana -p 3000:3000 grafana/grafana
 
 
+-----------------------------------------------
+	ubuntu
+-----------------------------------------------	
+docker pull ubuntu 
+docker run -it --name my-ubuntu ubuntu bash
+
+docker container 에 nodejs , git 설치 
+
+apt update 
+apt install git 
+apt install nodejs 
+
+docker start my-ubuntu 
+docker exec -it my-ubuntu /bin/bash 
+
+dpkg --configure -a 
+
+apt install npm
+
+node -v 
+npm -v
+
+-----------------------------------------------
+	nodejs
+-----------------------------------------------	
+nodejs 
+docker로 외부 파일과 연동
+
+
+reactjs로 딥러닝을 한다. 
+git으로 commit하면 내가 원하는 디렉터리에 넣고 
+그 디렉토리는  docker과 연동이 되어 docker에서 실행되는 디렉토리에 들어가서 
+파일이 반영된다. 
+아직 모르는 부분들이 있다. 
+딥러닝을 reactjs로 어떻게 돌리는지... 
+어떻게 실행시켜야 하는지 모른다.
+
+docker run --name node_test node
+
+-----------------------------------------------
+	python
+-----------------------------------------------	
+
+docker pull python 
+docker run -d --name python1 -v C:\docket_src\test\test1:/usr/src/app python => ???
+
+docker exec -it python1 /bin/sh
+docker exec -it python1 /bin/bash
+
+
+-----------------------------------------------
+	spring boot 
+-----------------------------------------------	
+docker
+apache tomcat , java 
+
+ubuntu에서 apache tomcat 설치 및 java 연동 
+디렉토리 연동 
+
+git으로 commit하면 docker ubuntu container로 들어가기 
+
+
+docker run -p 8080:80 -v 내경로:docker경로 이미지명 
+
+
+docker 컨테이너를 이미 생성한 뒤에는 포트 연결하는 방법이 없나?
+docker 디렉토리를 이미 생성한 뒤에는 디렉토리 연결하는 방법이 없나? 
+docker git을 활용하는 방법은 없나? 
+docker git을 활용하여 소스 형상관리를 하고 
+
+
+-----------------------------------------------
+	tomcat 
+-----------------------------------------------	
+docker pull tomcat 
+
+docker run --name tomcat1 80:80 tomcat 
+
+docker run -d --name tomcat1 -p 80:8080 tomcat
+
+docker cp /u01/Devops/test/dist/index.html tomcat1:/usr/local/tomcat/webapps/ROOT
+
+docker cp F:\pyg\pyg\test\test\index.html tomcat1:/usr/local/tomcat/webapps/ROOT
+docker cp F:\pyg\pyg\test\test\js tomcat1:/usr/local/tomcat/webapps/ROOT
+
+docker exec -it tomcat1 /bin/bash 
+
+docker run -d --name tomcat1 -p 80:8080 -v F:\pyg\pyg\test\test:/usr/local/tomcat/webapps/ROOT tomcat 
+
+java -jar 해서 openjdk11 버전으로 나온다.
+
+git 설정도 한다.
+
+리눅스에 용량 설정하는 방법 
+리눅스에 권한 설정하는 방법 
+
+
+https://zunoxi.tistory.com/48
+
+
+
+
+
+
+
+
+
+
+
 
